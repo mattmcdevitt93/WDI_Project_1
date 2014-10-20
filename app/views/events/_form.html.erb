@@ -1,0 +1,34 @@
+<%= form_for(@event) do |f| %>
+
+    <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this lesson from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :event %><br>
+    <%= f.text_field :event %>
+  </div>
+    <div class="field">
+    <%= f.label :event_type %><br>
+    <%= f.select(:event_type, ['Team Event', 'Organization Event'], {include_blank: "Select something"}) %>
+  </div>
+  <div class="field">
+  <%= f.label :event_time %><br>
+  <%= f.date_select :event_time %>
+  </div>
+  <div class="field">
+  <%= f.label :location %><br>
+  <%= f.text_field :location %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

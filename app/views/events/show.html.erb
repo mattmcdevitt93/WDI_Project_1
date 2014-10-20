@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @event.id %><br>
+  <%= @event.event %><br>
+  <%= @event.event_time %><br>
+  <%= @event.event_type %><br>
+  <%= @event.location %><br>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
