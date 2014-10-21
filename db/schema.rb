@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20141021184010) do
 
   create_table "events", force: true do |t|
     t.text     "event",             null: false
-    t.time     "event_time_start",  null: false
-    t.time     "event_time_finish", null: false
+    t.datetime "event_time_start",  null: false
+    t.datetime "event_time_finish", null: false
     t.text     "location",          null: false
     t.string   "event_type",        null: false
     t.datetime "created_at",        null: false

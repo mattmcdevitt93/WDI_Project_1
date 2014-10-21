@@ -56,7 +56,7 @@ private
     end
 
     def event_params
-      params.require(:event).permit(:event, :event_type, :location, :slots, :created_by, :event_date_start, :event_time_start, :event_date_finish, :event_time_finish)
+      params.require(:event).permit(:event, :event_type, :location, :slots, :created_by, :event_time_start, :event_time_finish)
     end
 
 end

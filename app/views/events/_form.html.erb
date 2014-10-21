@@ -22,11 +22,11 @@
   </div>
   <div class="field">
   <%= f.label "Start Time and Date" %><br>
-  <%= f.datetime_select :event_time_start %>
+  <%= f.datetime_select :event_time_start, ampm: true %>
   </div>
   <div class="field">
   <%= f.label "Finish Time and Date" %><br>
-  <%= f.datetime_select :event_time_finish %>
+  <%= f.datetime_select :event_time_finish, default: 3.days.from_now, ampm: true %>
   </div>
   <div class="field">
   <%= f.label :location %><br>
