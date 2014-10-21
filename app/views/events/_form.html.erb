@@ -22,13 +22,11 @@
   </div>
   <div class="field">
   <%= f.label "Start Time and Date" %><br>
-  <%= f.date_select :event_date_start %> -
-  <%= f.time_select :event_time_start, :ignore_date => true %>
+  <%= f.datetime_select :event_time_start %>
   </div>
   <div class="field">
   <%= f.label "Finish Time and Date" %><br>
-  <%= f.date_select :event_date_finish %> -
-  <%= f.time_select :event_time_finish, :ignore_date => true %>
+  <%= f.datetime_select :event_time_finish %>
   </div>
   <div class="field">
   <%= f.label :location %><br>
