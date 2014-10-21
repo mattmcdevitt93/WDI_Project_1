@@ -5,7 +5,7 @@ class CreateJobs < ActiveRecord::Migration
       t.belongs_to :event
       t.belongs_to :user
       t.integer :time
-      t.boolean :verfied
+      t.boolean :verified
 
       t.timestamps null: false
     end

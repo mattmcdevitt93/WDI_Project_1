@@ -5,10 +5,12 @@ class JobsController < ApplicationController
 
   def index
     @jobs = Job.all
+    @events = Event.all
   end
 
   def new
     @job = Job.new
+    @events = Event.all
   end
 
   def show

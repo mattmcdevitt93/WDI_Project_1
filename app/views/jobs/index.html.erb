@@ -1,0 +1,10 @@
+Your Jobs page
+
+<% @jobs.each do |job| %>
+  <%= job.id %>
+  <%= link_to 'Show', job %>
+  <%= link_to 'Edit', edit_job_path(job) %>
+  <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<%= link_to 'Apply for slot', new_job_path %>

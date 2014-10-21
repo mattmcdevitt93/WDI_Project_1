@@ -17,13 +17,13 @@ ActiveRecord::Schema.define(version: 20141020134045) do
   enable_extension "plpgsql"
 
   create_table "events", force: true do |t|
-    t.text     "event"
-    t.date     "event_time"
-    t.text     "location"
-    t.string   "event_type"
+    t.text     "event",      null: false
+    t.date     "event_time", null: false
+    t.text     "location",   null: false
+    t.string   "event_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "volunteer"
+    t.integer  "slots",      null: false
   end
 
   create_table "jobs", force: true do |t|
