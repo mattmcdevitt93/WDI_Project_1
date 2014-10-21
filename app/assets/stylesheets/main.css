@@ -1,3 +1,28 @@
 .header{
   border: 2px solid black;
+  padding: 5px 5px 5px 5px;
+}
+
+.logo {
+    border: 2px solid black;
+}
+
+.login {
+    border: 2px solid black;
+}
+
+.nav_bar {
+    border: 2px solid black;
+}
+
+.buffer {
+    border: 2px solid black;
+}
+
+.content {
+      border: 2px solid black;
+}
+
+.footer {
+      border: 2px solid black;
 }
