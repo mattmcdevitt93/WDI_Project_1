@@ -7,4 +7,6 @@ Your Jobs page
   <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 
-<%= link_to 'Apply for slot', new_job_path %>
+<button type="button" class="btn btn-default"><%= link_to 'Back', root_path %></button>
+
+<button type="button" class="btn btn-default"><%= link_to 'Apply for slot', new_job_path %></button>

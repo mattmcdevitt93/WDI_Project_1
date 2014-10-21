@@ -9,6 +9,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @user = current_user.email
   end
 
   def show
@@ -55,7 +56,7 @@ private
     end
 
     def event_params
-      params.require(:event).permit(:event, :event_type, :event_time, :location, :slots)
+      params.require(:event).permit(:event, :event_type, :location, :slots, :created_by, :event_date_start, :event_time_start, :event_date_finish, :event_time_finish)
     end
 
 end

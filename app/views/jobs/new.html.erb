@@ -1,3 +1,13 @@
 Avalable jobs
 
-<%= link_to 'Back', jobs_path %>
+<%= @date %>
+<br>
+
+<% @events.each do |event| %>
+  <%= event.event %>
+  <%= event.slots %>
+  <%= render 'button' %>
+
+<% end %>
+
+<button type="button" class="btn btn-default"><%= link_to 'Back', jobs_path %></button>

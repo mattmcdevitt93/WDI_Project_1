@@ -15,14 +15,20 @@
     border: 2px solid black;
 }
 
-.buffer {
-    border: 2px solid black;
-}
-
 .content {
       border: 2px solid black;
 }
 
 .footer {
       border: 2px solid black;
+}
+
+.index_table {
+  border: 2px solid black;
+}
+
+td {
+  min-width: 80px;
+
+  border: 2px solid black;
 }

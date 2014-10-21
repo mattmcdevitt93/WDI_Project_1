@@ -4,10 +4,12 @@
   <strong>Event:</strong>
   <%= @event.id %><br>
   <%= @event.event %><br>
-  <%= @event.event_time %><br>
+  <%= @event.event_date_start%> at <%= @event.event_time_start%> to <br>
+  <%= @event.event_date_finish%> at <%= @event.event_time_finish%> <br>
   <%= @event.event_type %><br>
   <%= @event.location %><br>
+  <%= @event.created_by %><br>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<button type="button" class="btn btn-default"><%= link_to 'Edit', edit_event_path(@event) %></button> |
+<button type="button" class="btn btn-default"><%= link_to 'Back', events_path %></button>

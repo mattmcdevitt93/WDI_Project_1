@@ -21,8 +21,14 @@
     <%= f.select(:event_type, ['Team Event', 'Organization Event'], {include_blank: "Select something"}) %>
   </div>
   <div class="field">
-  <%= f.label :event_time %><br>
-  <%= f.date_select :event_time %>
+  <%= f.label "Start Time and Date" %><br>
+  <%= f.date_select :event_date_start %> -
+  <%= f.time_select :event_time_start, :ignore_date => true %>
+  </div>
+  <div class="field">
+  <%= f.label "Finish Time and Date" %><br>
+  <%= f.date_select :event_date_finish %> -
+  <%= f.time_select :event_time_finish, :ignore_date => true %>
   </div>
   <div class="field">
   <%= f.label :location %><br>
@@ -31,6 +37,9 @@
   <div class="field">
   <%= f.label :slots %><br>
   <%= f.text_field :slots %>
+  </div>
+  <div class="field">
+  <%= f.hidden_field :created_by, :value => @user %>
   </div>
   <div class="actions">
     <%= f.submit %>

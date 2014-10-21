@@ -11,6 +11,9 @@ class JobsController < ApplicationController
   def new
     @job = Job.new
     @events = Event.all
+    @count = Event.count
+    @date = Time.now
+    binding.pry
   end
 
   def show
@@ -20,7 +23,7 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.new(event_params)
+    @job = Job.new(job_params)
 
     respond_to do |format|
       if @job.save

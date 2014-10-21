@@ -17,13 +17,17 @@ ActiveRecord::Schema.define(version: 20141020134045) do
   enable_extension "plpgsql"
 
   create_table "events", force: true do |t|
-    t.text     "event",      null: false
-    t.date     "event_time", null: false
-    t.text     "location",   null: false
-    t.string   "event_type", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "slots",      null: false
+    t.text     "event",             null: false
+    t.date     "event_date_start",  null: false
+    t.time     "event_time_start",  null: false
+    t.date     "event_date_finish", null: false
+    t.time     "event_time_finish", null: false
+    t.text     "location",          null: false
+    t.string   "event_type",        null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "slots",             null: false
+    t.text     "created_by",        null: false
   end
 
   create_table "jobs", force: true do |t|
@@ -31,7 +35,7 @@ ActiveRecord::Schema.define(version: 20141020134045) do
     t.integer  "event_id"
     t.integer  "user_id"
     t.integer  "time"
-    t.boolean  "verfied"
+    t.boolean  "verified"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
