@@ -7,7 +7,7 @@ class JobsController < ApplicationController
     @jobs = Job.where(user_id: current_user.id)
     @events = Event.all
     @team_hours = Event.hours_this_month_for_user(current_user, 'Team Event')
-    @org_hours = 4
+    @org_hours = Event.hours_this_month_for_user(current_user, 'Organization Event')
     @total_hours = @team_hours + @org_hours
   end
 

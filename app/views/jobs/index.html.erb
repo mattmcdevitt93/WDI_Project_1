@@ -3,6 +3,11 @@ Your Jobs page
 Total Hours:  <%= @total_hours %>
 Team Hours: <%= @team_hours %>
 Organization Hours: <%= @org_hours %>
+<% if @org_hours >= 5 and @total_hours > 20 %>
+  <button type="button" class="btn btn-success">Hours Meet</button>
+<% else %>
+  <button type="button" class="btn btn-danger">Hours Not Meet</button>
+<% end %>
 <br>
 <table>
   <tr>
@@ -11,6 +16,7 @@ Organization Hours: <%= @org_hours %>
   <th> Event Type </th>
   <th> Event Date</th>
   <th> Hours </th>
+  <th> Verified </th>
   <th></th>
   </tr>
   <tr>
@@ -21,9 +27,18 @@ Organization Hours: <%= @org_hours %>
   <td><%= job.event.event_time_start %> to
   <%= job.event.event_time_finish %></td>
   <td><%= ((job.event.event_time_finish.to_i - job.event.event_time_start.to_i) / 3600) %></td>
+  <td>
+    <% if job.verified == nil %>
+      <button type="button" class="btn btn-default">Scheduled</button>
+    <% elsif job.verified == true %>
+      <button type="button" class="btn btn-success">Verfied</button>
+    <% elsif job.verified == false %>
+      <button type="button" class="btn btn-danger">Not Verified</button>
+    <% end %>
+  </td>
   <td><%= link_to 'Show', job, class: 'btn btn-default' %>
   <%= link_to 'Edit', edit_event_path(job), class: 'btn btn-default' %>
-  <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %></td>
+  <%= link_to 'Decline', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %></td>
   </tr>
 <% end %>
 </table>
