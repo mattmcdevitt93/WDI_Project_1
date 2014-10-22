@@ -1,14 +1,30 @@
 Your Jobs page
 <br>
+<table>
+  <tr>
+  <th> #id </th>
+  <th> Event Name </th>
+  <th> Event Type </th>
+  <th> Event Date</th>
+  <th></th>
+  </tr>
+  <tr>
 <% @jobs.each do |job| %>
-  <%= job.id %>
-  <%= job.event_id %>
-  <%= link_to 'Show', job %>
-  <%= link_to 'Edit', edit_job_path(job) %>
-  <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <br>
+  <td><%= job.id %></td>
+  <td><%= job.event.event %></td>
+  <td><%= job.event.event_type %></td>
+  <td><%= job.event.event_time_start %> to
+  <%= job.event.event_time_finish %></td>
+  <td><%= link_to 'Show', job, class: 'btn btn-default' %>
+  <%= link_to 'Edit', edit_event_path(job), class: 'btn btn-default' %>
+  <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %></td>
+  </tr>
 <% end %>
-
+</table>
+<% if @jobs == [] %>
+"Help the Team... sad face... :-(
+<br>
+<% end %>
 <%= link_to 'Back', root_path, class: 'btn btn-default' %>
 
 <%= link_to 'Apply for slot', new_job_path , class: 'btn btn-default'%>

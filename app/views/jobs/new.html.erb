@@ -5,12 +5,13 @@ Avalable jobs
 
 <% @events.each do |event| %>
 <br>
-  <%= event.event %> - id# <%= event.id %> -
+
+  <%= event.event %> date: <%= event.event_time_start %>- id# <%= event.id %> -
   Slots: <%= event.slots %> / <%= event.jobs_count %>
 
     <% if event.expired? == false %>
       <button type="button" class="btn btn-default"> Expired </button>
-    <% elsif event.overbooked? %>
+    <% elsif event.overbooked? == true %>
       <button type="button" class="btn btn-danger"> Overbooked </button>
     <% elsif event.full? %>
       <button type="button" class="btn btn-warning"> Full </button>
@@ -22,11 +23,11 @@ Avalable jobs
             <%= f.hidden_field :event_id, :value => event.id %>
             <%= f.hidden_field :user_id, :value => current_user.id %>
             <div class='action'>
-            <%= f.submit %>
+            <%= f.submit :class => "btn btn-success btn-mini" %>
             </div>
          <% end %>
 
     <% end %>
 <% end %>
 <br>
-<button type="button" class="btn btn-default"><%= link_to 'Back', jobs_path %></button>
+<%= link_to 'Back', jobs_path, class: 'btn btn-default' %>

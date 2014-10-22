@@ -12,6 +12,11 @@
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
+  <div>
+    <%= f.label :user_level %><br>
+    <%= f.select(:user_level, ['Volunteer', 'Event Organizer', 'Managment'], {include_blank: "Select something"}) %>
+  </div>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 

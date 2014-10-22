@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 
 
   def index
-    @jobs = Job.all
+    @jobs = Job.where(user_id: current_user.id)
     @events = Event.all
   end
 
@@ -35,18 +35,18 @@ class JobsController < ApplicationController
   def destroy
     @job.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Job was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Job was successfully destroyed.' }
     end
   end
 
 private
 
     def set_job
-      @job = Job.find(params[:id])
+      @job = Job.find(params[:user_id])
     end
 
     def job_params
-      params.require(:event_id).permit(:user_id)
+      params.require(:job).permit(:user_id, :event_id)
     end
 
 end

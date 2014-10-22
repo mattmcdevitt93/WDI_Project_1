@@ -17,26 +17,24 @@ ActiveRecord::Schema.define(version: 20141021184010) do
   enable_extension "plpgsql"
 
   create_table "events", force: true do |t|
-    t.text     "event",             null: false
-    t.datetime "event_time_start",  null: false
-    t.datetime "event_time_finish", null: false
-    t.text     "location",          null: false
-    t.string   "event_type",        null: false
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.integer  "slots",             null: false
-    t.text     "created_by",        null: false
-    t.integer  "jobs_count"
+    t.text     "event",                         null: false
+    t.datetime "event_time_start",              null: false
+    t.datetime "event_time_finish",             null: false
+    t.text     "location",                      null: false
+    t.string   "event_type",                    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "slots",                         null: false
+    t.text     "created_by",                    null: false
+    t.integer  "jobs_count",        default: 0
   end
 
   create_table "jobs", force: true do |t|
-    t.string   "description"
     t.integer  "event_id"
     t.integer  "user_id"
-    t.integer  "time"
     t.boolean  "verified"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: true do |t|
@@ -50,6 +48,7 @@ ActiveRecord::Schema.define(version: 20141021184010) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.text     "user_level"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
