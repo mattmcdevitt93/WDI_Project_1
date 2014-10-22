@@ -29,4 +29,8 @@ class Event < ActiveRecord::Base
     jobs.pluck(:user_id).include? user.id
   end
 
+  def length_in_hours
+    ((event_time_finish - event_time_start) / 3600).round
+  end
+
 end
