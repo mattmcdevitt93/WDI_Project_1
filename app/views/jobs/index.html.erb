@@ -1,11 +1,16 @@
 Your Jobs page
 <br>
+Total Hours:  XX
+Team Hours: <%= @team_hours / 3600 %>
+Organization Hours: <%= @org_hours %>
+<br>
 <table>
   <tr>
   <th> #id </th>
   <th> Event Name </th>
   <th> Event Type </th>
   <th> Event Date</th>
+  <th> Hours </th>
   <th></th>
   </tr>
   <tr>
@@ -15,6 +20,7 @@ Your Jobs page
   <td><%= job.event.event_type %></td>
   <td><%= job.event.event_time_start %> to
   <%= job.event.event_time_finish %></td>
+  <td><%= ((job.event.event_time_finish.to_i - job.event.event_time_start.to_i) / 3600) %></td>
   <td><%= link_to 'Show', job, class: 'btn btn-default' %>
   <%= link_to 'Edit', edit_event_path(job), class: 'btn btn-default' %>
   <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %></td>
@@ -23,7 +29,6 @@ Your Jobs page
 </table>
 <% if @jobs == [] %>
 "Help the Team... sad face... :-(
-<br>
 <% end %>
 <%= link_to 'Back', root_path, class: 'btn btn-default' %>
 

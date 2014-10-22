@@ -4,9 +4,6 @@ Avalable jobs
 <br>
 
 <% @events.each do |event| %>
-<br>
-
-
 <% if current_user.user_level == 'Managment' %>
     <%= event.event %> date: <%= event.event_time_start %>- id# <%= event.id %> -
   Slots: <%= event.slots %> / <%= event.jobs_count %>

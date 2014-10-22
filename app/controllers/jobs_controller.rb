@@ -6,6 +6,8 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.where(user_id: current_user.id)
     @events = Event.all
+    @team_hours = Job.where(@events.event_type 'Team Event') and Job.where(user_id: current_user.id)
+    @org_hours = 4
   end
 
   def new
@@ -16,6 +18,7 @@ class JobsController < ApplicationController
   end
 
   def show
+    @job = Job.find(params[:id])
   end
 
   def edit

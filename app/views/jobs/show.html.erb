@@ -1,3 +1,19 @@
-PRINT THIS FOR THE JOB STUFF
+<table>
+  <tr>
+  <th> #id </th>
+  <th> Event Name </th>
+  <th> Event Type </th>
+  <th> Event Date</th>
+  <th> Hours </th>
+  </tr>
+  <tr>
+  <td><%= @job.id %></td>
+  <td><%= @job.event.event %></td>
+  <td><%= @job.event.event_type %></td>
+  <td><%= @job.event.event_time_start %> to
+  <%= @job.event.event_time_finish %></td>
+  <td> <%= ((@job.event.event_time_finish.to_i - @job.event.event_time_start.to_i) / 3600) %> </td>
+  </tr>
+</table>
 
-<button type="button" class="btn btn-default"><%= link_to 'Back', jobs_path %></button>
+<%= link_to 'Back', jobs_path, class: 'btn btn-default'  %>
