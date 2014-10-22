@@ -37,4 +37,8 @@ class Event < ActiveRecord::Base
     this_month.to_a.sum(&:length_in_hours)
   end
 
+  def self.hours_this_month_for_user(user)
+    user.jobs.map(&:event).sum(&:length_in_hours)
+  end
+
 end
