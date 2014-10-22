@@ -1,14 +1,28 @@
+body {
+  background-color: #F5F4F4;
+}
+
 .header{
-  border: 2px solid black;
   padding: 5px 5px 5px 5px;
+  background-color: #5C6983;
+
+    position: fixed;
+    height: 50px;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
 }
 
 .logo {
     border: 2px solid black;
+    background-color: #F5F4F4;
 }
 
 .login {
-    border: 2px solid black;
+    box-shadow: 6px 6px 3px #222222;
+    margin: 5px 5px 5px 5px;
+    background-color: #F5F4F4;
 }
 
 .nav_bar {
@@ -16,15 +30,29 @@
 }
 
 .content {
-      border: 2px solid black;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  background-color: #C1D3C8;
+  padding: 20px 10px 20px 10px;
 }
 
 .footer {
-      border: 2px solid black;
+      background-color: #5C6983;
+}
+
+.footer_content {
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    background-color: #F5F4F4;
+    box-shadow: 6px 6px 3px #222222;
 }
 
 .index_table {
   border: 2px solid black;
+}
+.btn {
+  margin: 2px 2px 2px 2px;
 }
 
 td {

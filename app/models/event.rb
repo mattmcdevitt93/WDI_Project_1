@@ -6,6 +6,7 @@ class Event < ActiveRecord::Base
   scope :not_expired, -> { where('event_time_start > ?', Time.now)}
   scope :overbooked, -> { where('slots < jobs_count') }
   scope :full, -> { where('slots = jobs_count') }
+  scope :this_month, -> { where("DATE_PART('month', event_time_start) = ?", Time.now.month)}
 
   # Event.already_applied(User.first)
   scope :already_applied, -> (user) { joins(:jobs).where('user_id = ?', user.id) }
