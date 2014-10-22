@@ -1,0 +1,82 @@
+body {
+  background-color: #F5F4F4;
+}
+
+.header{
+  padding: 5px 5px 5px 5px;
+  background-color: #5C6983;
+
+    position: fixed;
+    height: 50px;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+}
+
+.logo {
+    border: 2px solid black;
+    background-color: #F5F4F4;
+    box-shadow: 6px 6px 3px #222222;
+}
+
+.login {
+    box-shadow: 6px 6px 3px #222222;
+    margin: 5px 5px 5px 5px;
+    background-color: #F5F4F4;
+}
+
+.nav_bar {
+    border: 2px solid black;
+}
+
+.content {
+  margin-top: 60px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  background-color: #C1D3C8;
+  padding: 20px 10px 20px 10px;
+}
+
+.footer {
+      background-color: #5C6983;
+      padding: 10px 10px 10px 10px;
+}
+
+.footer_content {
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    background-color: #F5F4F4;
+    border: 2px solid black;
+}
+
+.index_table {
+  border: 2px solid black;
+}
+.btn {
+  margin: 2px 2px 2px 2px;
+}
+
+td {
+  min-width: 80px;
+
+  border: 2px solid black;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+ +
+ */
+
