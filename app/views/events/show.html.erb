@@ -11,5 +11,5 @@
   <%= @event.created_by %><br>
 </p>
 
-<button type="button" class="btn btn-default"><%= link_to 'Edit', edit_event_path(@event) %></button> |
-<button type="button" class="btn btn-default"><%= link_to 'Back', events_path %></button>
+<%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-default' %>
+<%= link_to 'Back', events_path, class: 'btn btn-default' %>

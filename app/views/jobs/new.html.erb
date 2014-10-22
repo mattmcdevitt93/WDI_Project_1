@@ -4,10 +4,29 @@ Avalable jobs
 <br>
 
 <% @events.each do |event| %>
-  <%= event.event %>
-  <%= event.slots %>
-  <%= render 'button' %>
+<br>
+  <%= event.event %> - id# <%= event.id %> -
+  Slots: <%= event.slots %> / <%= event.jobs_count %>
 
+    <% if event.expired? == false %>
+      <button type="button" class="btn btn-default"> Expired </button>
+    <% elsif event.overbooked? %>
+      <button type="button" class="btn btn-danger"> Overbooked </button>
+    <% elsif event.full? %>
+      <button type="button" class="btn btn-warning"> Full </button>
+    <% elsif event.already_applied?(current_user) %>
+      <button type="button" class="btn btn-info"> Already Applied </button>
+    <% else %>
+
+         <%= form_for(@job) do |f| %>
+            <%= f.hidden_field :event_id, :value => event.id %>
+            <%= f.hidden_field :user_id, :value => current_user.id %>
+            <div class='action'>
+            <%= f.submit %>
+            </div>
+         <% end %>
+
+    <% end %>
 <% end %>
-
+<br>
 <button type="button" class="btn btn-default"><%= link_to 'Back', jobs_path %></button>

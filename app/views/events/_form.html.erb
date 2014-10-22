@@ -38,8 +38,9 @@
   </div>
   <div class="field">
   <%= f.hidden_field :created_by, :value => @user %>
+  <%= f.hidden_field :jobs_count, :value => 0 %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", class: 'btn btn-default' %>
   </div>
 <% end %>

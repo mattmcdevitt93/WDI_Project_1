@@ -1,12 +1,14 @@
 Your Jobs page
-
+<br>
 <% @jobs.each do |job| %>
   <%= job.id %>
+  <%= job.event_id %>
   <%= link_to 'Show', job %>
   <%= link_to 'Edit', edit_job_path(job) %>
   <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <br>
 <% end %>
 
-<button type="button" class="btn btn-default"><%= link_to 'Back', root_path %></button>
+<%= link_to 'Back', root_path, class: 'btn btn-default' %>
 
-<button type="button" class="btn btn-default"><%= link_to 'Apply for slot', new_job_path %></button>
+<%= link_to 'Apply for slot', new_job_path , class: 'btn btn-default'%>

@@ -10,12 +10,12 @@
     <td><%= event.id %></td>
     <td><%= event.event %></td>
     <td><%= event.event_type %></td>
-    <td><button type="button" class="btn btn-default btn-block"><%= link_to 'Show', event %></button>
-    <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_event_path(event) %></button>
-    <button type="button" class="btn btn-warning"><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+    <td><%= link_to 'Show', event, class: 'btn btn-default' %>
+    <%= link_to 'Edit', edit_event_path(event), class: 'btn btn-default' %>
+    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %></td>
   </tr>
 <% end %>
 </table>
-<button type="button" class="btn btn-default"><%= link_to 'New event', new_event_path %></button>
+<%= link_to 'New event', new_event_path, class: 'btn btn-default' %>
 
-<button type="button" class="btn btn-default"><%= link_to 'Back', root_path %></button>
+<%= link_to 'Back', root_path, class: 'btn btn-default' %>

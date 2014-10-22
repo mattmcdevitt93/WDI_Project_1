@@ -13,7 +13,6 @@ class JobsController < ApplicationController
     @events = Event.all
     @count = Event.count
     @date = Time.now
-    binding.pry
   end
 
   def show
@@ -24,7 +23,6 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
-
     respond_to do |format|
       if @job.save
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
@@ -48,7 +46,7 @@ private
     end
 
     def job_params
-      params.require(:descrpition).permit(:user_id, :event_id)
+      params.require(:event_id).permit(:user_id)
     end
 
 end
