@@ -6,8 +6,9 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.where(user_id: current_user.id)
     @events = Event.all
-    @team_hours = 7
+    @team_hours = Event.hours_this_month_for_user(current_user, 'Team Event')
     @org_hours = 4
+    @total_hours = @team_hours + @org_hours
   end
 
   def new
