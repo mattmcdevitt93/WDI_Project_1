@@ -33,4 +33,8 @@ class Event < ActiveRecord::Base
     ((event_time_finish - event_time_start) / 3600).round
   end
 
+  def self.hours_this_month
+    this_month.to_a.sum(&:length_in_hours)
+  end
+
 end
