@@ -2,11 +2,23 @@ Avalable jobs
 
 <%= @date %>
 <br>
-
+<table>
+<tr>
+  <th> Event Name </th>
+  <th> Event Date </th>
+  <th> Event Type </th>
+  <th> Slots</th>
+  <th> Status </th>
+  <th></th>
+</tr>
+<tr>
 <% @events.each do |event| %>
 <% if current_user.user_level == 'Managment' %>
-    <%= event.event %> date: <%= event.event_time_start %>- id# <%= event.id %> -
-  Slots: <%= event.slots %> / <%= event.jobs_count %>
+    <td> <%= event.event %></td>
+    <td> date: <%= event.event_time_start %></td>
+    <td>  <%= event.event_type %> </td>
+    <td>Slots: <%= event.slots %> / <%= event.jobs_count %></td>
+    <td>
     <% if event.expired? == false %>
       <button type="button" class="btn btn-default"> Expired </button>
     <% elsif event.overbooked? == true %>
@@ -25,7 +37,8 @@ Avalable jobs
       <% end %>
     <% end %>
 <% end %>
-
+    </td>
+  </tr>
     <% if event.expired? == true and event.overbooked? == false and event.full? == false and event.already_applied?(current_user) == false and current_user.user_level != 'Managment' %>
   <%= event.event %> date: <%= event.event_time_start %>- id# <%= event.id %> - Slots: <%= event.slots %> / <%= event.jobs_count %>
          <%= form_for(@job) do |f| %>
@@ -37,5 +50,6 @@ Avalable jobs
          <% end %>
     <% end %>
 <% end %>
+</table>
 <br>
 <%= link_to 'Back', jobs_path, class: 'btn btn-default' %>

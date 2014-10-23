@@ -58,7 +58,8 @@ body {
 }
 
 td {
-  min-width: 80px;
-
+  min-width: 70px;
+  padding: 5px 5px 5px 5px;
   border: 2px solid black;
 }
+
