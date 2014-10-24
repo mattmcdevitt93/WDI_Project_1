@@ -37,7 +37,6 @@ Organization Hours: <%= @org_hours %>
     <% end %>
   </td>
   <td><%= link_to 'Show', job, class: 'btn btn-default' %>
-  <%= link_to 'Edit', edit_event_path(job), class: 'btn btn-default' %>
   <%= link_to 'Decline', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %></td>
   </tr>
 <% end %>

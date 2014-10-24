@@ -37,7 +37,8 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    @job.destroy
+    @jobs = Job.find(params[:id])
+    @jobs.destroy
     respond_to do |format|
       format.html { redirect_to root_path, notice: 'Job was successfully destroyed.' }
     end

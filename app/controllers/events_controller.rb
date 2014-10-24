@@ -16,6 +16,7 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @user = current_user.email
   end
 
   def create

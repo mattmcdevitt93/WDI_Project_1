@@ -1,19 +1,15 @@
-<table>
-  <tr>
-  <th> #id </th>
-  <th> Event Name </th>
-  <th> Event Type </th>
-  <th> Event Date</th>
-  <th> Hours </th>
-  </tr>
-  <tr>
-  <td><%= @job.id %></td>
-  <td><%= @job.event.event %></td>
-  <td><%= @job.event.event_type %></td>
-  <td><%= @job.event.event_time_start %> to
-  <%= @job.event.event_time_finish %></td>
-  <td> <%= ((@job.event.event_time_finish.to_i - @job.event.event_time_start.to_i) / 3600) %> </td>
-  </tr>
-</table>
+
+<div>
+<strong>#id - </strong><%= @job.id %><br>
+<strong>Event Name - </strong><%= @job.event.event %><br>
+<strong>Event Type - </strong><%= @job.event.event_type %><br>
+<strong>Event Date/Time - </strong><%= @job.event.event_time_start %> to
+  <%= @job.event.event_time_finish %> - <strong><%= ((@job.event.event_time_finish.to_i - @job.event.event_time_start.to_i) / 3600) %> Hours </strong><br>
+<strong>Event Location - </strong><%= @job.event.location %><br>
+<br>
+
+INSERT MAP / PHOTO OF LOCATION HERE.
+
+</div>
 
 <%= link_to 'Back', jobs_path, class: 'btn btn-default'  %>

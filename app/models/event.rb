@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  has_many :jobs
+  has_many :jobs, :dependent => :destroy
 
   # You can chain these
   # lookup scopes here: http://api.rubyonrails.org/classes/ActiveRecord/Scoping/Named/ClassMethods.html
